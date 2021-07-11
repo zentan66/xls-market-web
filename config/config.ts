@@ -1,5 +1,5 @@
 import { defineConfig } from 'umi';
-import routes from './routes';
+// import routes from './routes';
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -9,11 +9,11 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
-  layout: {
-    name: 'Ant Design Pro',
-    locale: true,
-    layout: 'side',
-  },
-  routes: routes,
+  // layout: {
+  //   name: 'Ant Design Pro111',
+  //   locale: true,
+  //   layout: 'side',
+  // },
+  // routes: routes,
   fastRefresh: {},
 });
