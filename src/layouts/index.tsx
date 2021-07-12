@@ -38,7 +38,7 @@ const BasicLayout: React.FC = (props) => {
 
   return (
     <Layout>
-      <Sider width={200} collapsed={collapsed}>
+      <Sider width={360} collapsed={collapsed}>
         <a className="logo">
           <img width={16} height={16} src={logoSvg} />
           React Design Pro
@@ -93,7 +93,7 @@ const BasicLayout: React.FC = (props) => {
         <Layout style={{ padding: '0 0 24px' }}>
           <Content
             style={{
-              background: '#fff',
+              background: '##f6f8f9',
               padding: 24,
               margin: 0,
               minHeight: 'calc(100vh - 88px',

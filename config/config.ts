@@ -16,4 +16,5 @@ export default defineConfig({
   // },
   // routes: routes,
   fastRefresh: {},
+  sass: {},
 });
