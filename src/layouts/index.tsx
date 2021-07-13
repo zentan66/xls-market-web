@@ -6,6 +6,7 @@ import {
   HomeOutlined,
   SettingOutlined,
   InboxOutlined,
+  CopyrightOutlined,
 } from '@ant-design/icons';
 import { history } from 'umi';
 import './index.scss';
@@ -14,7 +15,7 @@ import './index.scss';
 }
 const { SubMenu } = Menu;
 const { TabPane } = Tabs;
-const { Header, Sider, Content } = Layout;
+const { Header, Sider, Content, Footer } = Layout;
 
 const logoSvg = require('./react.svg');
 
@@ -100,6 +101,11 @@ const BasicLayout: React.FC = (props) => {
             }}
           >
             {props.children}
+            <Footer
+              style={{ textAlign: 'center', background: '#fff', marginTop: 60 }}
+            >
+              Copyright <CopyrightOutlined /> React Ant Design 2021
+            </Footer>
           </Content>
         </Layout>
       </Layout>

@@ -19,6 +19,11 @@ import {
   GiftOutlined,
   ManOutlined,
   CodeOutlined,
+  QqOutlined,
+  WechatOutlined,
+  AlipayCircleOutlined,
+  WeiboOutlined,
+  GithubOutlined,
 } from '@ant-design/icons';
 import './index.scss';
 
@@ -36,8 +41,8 @@ export default function () {
     <section>
       <div className="person-center-container">
         <Row gutter={2}>
-          <Col span={8}>
-            <Card>
+          <Col span={8} style={{ marginRight: 20 }}>
+            <Card hoverable>
               <div className="personal-info-center">
                 <span className="avatar-container">
                   <Image src={avatar} height={100} width={100} alt="avatar" />
@@ -91,8 +96,8 @@ export default function () {
               </div>
             </Card>
           </Col>
-          <Col span={15} offset={1}>
-            <Card>
+          <Col span={15}>
+            <Card hoverable>
               <Tabs defaultActiveKey="basic" onChange={callback}>
                 <TabPane tab="基本信息" key="basic">
                   <Form
@@ -133,7 +138,68 @@ export default function () {
                   </Form>
                 </TabPane>
                 <TabPane tab="账号绑定" key="bangding">
-                  2222
+                  <div className="person-center-item">
+                    <QqOutlined
+                      style={{ fontSize: '40px', color: 'rgb(52, 146, 237)' }}
+                    />
+                    <div className="person-center-item-content">
+                      <div>绑定QQ</div>
+                      <div className="person-center-item-content-second">
+                        1204505056
+                      </div>
+                    </div>
+                    <Button type="link">更换绑定</Button>
+                  </div>
+                  <Divider />
+                  <div className="person-center-item">
+                    <WechatOutlined
+                      style={{ fontSize: '40px', color: 'rgb(77, 175, 41)' }}
+                    />
+                    <div className="person-center-item-content">
+                      <div>绑定微信</div>
+                      <div className="person-center-item-content-second">
+                        当前未绑定绑定微信账号
+                      </div>
+                    </div>
+                    <Button type="link">更换绑定</Button>
+                  </div>
+                  <Divider />
+                  <div className="person-center-item">
+                    <AlipayCircleOutlined
+                      style={{ fontSize: '40px', color: 'rgb(20, 118, 254)' }}
+                    />
+                    <div className="person-center-item-content">
+                      <div>绑定支付宝</div>
+                      <div className="person-center-item-content-second">
+                        当前未绑定绑定支付宝账号
+                      </div>
+                    </div>
+                    <Button type="link">更换绑定</Button>
+                  </div>
+                  <Divider />
+                  <div className="person-center-item">
+                    <WeiboOutlined
+                      style={{ fontSize: '40px', color: 'rgb(255, 212, 64)' }}
+                    />
+                    <div className="person-center-item-content">
+                      <div>绑定微博</div>
+                      <div className="person-center-item-content-second">
+                        当前未绑定绑定微博账号
+                      </div>
+                    </div>
+                    <Button type="link">更换绑定</Button>
+                  </div>
+                  <Divider />
+                  <div className="person-center-item">
+                    <GithubOutlined style={{ fontSize: '40px' }} />
+                    <div className="person-center-item-content">
+                      <div>绑定Github</div>
+                      <div className="person-center-item-content-second">
+                        当前未绑定绑定Github账号
+                      </div>
+                    </div>
+                    <Button type="link">更换绑定</Button>
+                  </div>
                 </TabPane>
               </Tabs>
             </Card>

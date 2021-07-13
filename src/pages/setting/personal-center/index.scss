@@ -27,3 +27,11 @@
   line-height: 30px;
   margin-top: 18px;
 }
+.person-center-item {
+  display: flex;
+  align-items: center;
+  &-content {
+    flex: 1;
+    margin-left: 20px;
+  }
+}
