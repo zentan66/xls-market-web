@@ -5,3 +5,8 @@
 .user-management-action {
   margin-bottom: 18px;
 }
+.user-table {
+  .ant-table-pagination-right {
+    justify-content: center;
+  }
+}

@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Table, Button, Layout, Row, Col, Input, Form } from 'antd';
 import { ColumnType } from 'antd/lib/table';
 import { PlusOutlined, SearchOutlined } from '@ant-design/icons';
+import dayjs from 'dayjs';
+import UserCreateDialog from './user-create-dialog';
 import './index.scss';
 
 const { Content } = Layout;
 const FormItem = Form.Item;
 
 const UserManagement: React.FC = () => {
+  const [dialogVisible, setDialogVisible] = useState(false);
   const onSelectChange = () => {};
   const rowSelection = {
     // selectedRowKeys: '',
     onChange: onSelectChange,
   };
+  const showCreateDialog = () => {
+    setDialogVisible(true);
+  };
+  const handleDialogCancel = () => {
+    setDialogVisible(false);
+  };
+
   const tableCols: Array<ColumnType<any>> = [
     { dataIndex: 'idx', title: '序号', render: (_v, _, idx) => idx + 1 },
     { dataIndex: 'id', title: 'id' },
     { dataIndex: 'username', title: '用户名' },
     { dataIndex: 'email', title: '邮箱' },
     { dataIndex: 'role', title: '角色' },
-    { dataIndex: 'updateTime', title: '修改时间' },
+    {
+      dataIndex: 'updateTime',
+      title: '修改时间',
+      render: (v) => dayjs(v).format('YYYY-MM-DD'),
+    },
     {
       dataIndex: 'action',
       title: '操作',
@@ -38,7 +52,12 @@ const UserManagement: React.FC = () => {
     <Content className="user-management-container">
       <Row className="user-management-action">
         <Col span={12}>
-          <Button type="primary" icon={<PlusOutlined />}>
+          <Button
+            type="primary"
+            icon={<PlusOutlined />}
+            style={{ marginRight: 15 }}
+            onClick={showCreateDialog}
+          >
             添加
           </Button>
           <Button type="primary" danger icon={<PlusOutlined />}>
@@ -59,6 +78,7 @@ const UserManagement: React.FC = () => {
         </Col>
       </Row>
       <Table
+        className="user-table"
         bordered
         rowSelection={rowSelection}
         columns={tableCols}
@@ -71,7 +91,17 @@ const UserManagement: React.FC = () => {
             updateTime: 1626163504038,
           },
         ]}
-        pagination={{ current: 1, pageSize: 20, total: 0 }}
+        pagination={{
+          current: 1,
+          pageSize: 20,
+          total: 120,
+          showQuickJumper: true,
+        }}
+      />
+      <UserCreateDialog
+        visible={dialogVisible}
+        title="添加"
+        onCancel={handleDialogCancel}
       />
     </Content>
   );
