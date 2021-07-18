@@ -6,14 +6,14 @@ const Dialog = styled(Modal)``;
 
 const FormItem = Form.Item;
 
-export interface IProps {
+export interface Props {
   title?: string;
   visible: boolean;
   onOk?: () => void;
   onCancel?: () => void;
 }
 
-const UserCreateDialog: React.FC<IProps> = ({
+const UserCreateDialog: React.FC<Props> = ({
   title,
   visible,
   onOk,
